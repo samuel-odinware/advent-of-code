@@ -1,3 +1,4 @@
+.env
 day-*.bench.txt
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,rust
