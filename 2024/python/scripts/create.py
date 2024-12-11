@@ -71,7 +71,9 @@ def write_notebook_file(instructions: str, path: pathlib.Path) -> None:
     )
     notebook["cells"].append(
         nbformat.v4.new_code_cell(
-            INSTRUCTION_PATH_TEMPLATE.format(file_path=path.parent.as_posix())
+            INSTRUCTION_PATH_TEMPLATE.format(
+                file_path=f"{path.parent.as_posix()}/input.txt"
+            )
         ),
     )
     notebook["cells"].append(
@@ -143,7 +145,7 @@ def main(day: Annotated[int, typer.Argument(help="Advent of Code day to create."
             continue
         write_notebook_file(instructions=challenge.instructions, path=challenge_path)
     input_file = day_path.joinpath("input.txt")
-    if not input_file.exists:
+    if not input_file.exists():
         input_file.write_text(request_input_data(day=day))
 
 
