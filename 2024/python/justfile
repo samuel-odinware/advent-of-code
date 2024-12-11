@@ -1,0 +1,5 @@
+default:
+  @just --list
+
+create DAY:
+    python scripts/create.py {{DAY}}

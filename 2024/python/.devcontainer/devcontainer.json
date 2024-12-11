@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Advent of Code - 2024 - Python",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"UV_VERSION": "0.5.7",
+			"DEBIAN_VERSION": "bookworm"
+		}
+	},
+	"containerEnv": {
+		"DISPLAY": "dummy",
+		"IPYTHONDIR": "/workspaces/advent-of-code/2024/python/.ipython",
+		"PYTHONUNBUFFERED": "True",
+		"UV_LINK_MODE": "copy",
+		"UV_COMPILE_BYTECODE": "True"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"aaron-bond.better-comments",
+				"charliermarsh.ruff",
+				"EditorConfig.EditorConfig",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"nefrob.vscode-just-syntax",
+				"njpwerner.autodocstring",
+				"redhat.vscode-yaml",
+				"tamasfe.even-better-toml"
+			]
+		},
+		"settings": {
+			"python.defaultInterpreterPath": ".venv/bin/python",
+			"python.analysis.autoImportCompletions": true,
+			"python.analysis.autoSearchPaths": true,
+			"python.autoComplete.extraPaths": [
+				".venv/lib"
+			],
+			"python.analysis.extraPaths": [
+				".venv/lib"
+			],
+			"[python]": {
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "charliermarsh.ruff",
+				"editor.formatOnPaste": false,
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": "explicit",
+					"source.fixAll": "explicit"
+				}
+			},
+			"python.testing.unittestEnabled": false,
+			"python.testing.pytestEnabled": true,
+			"python.testing.pytestPath": ".venv/bin/pytest",
+			"files.insertFinalNewline": true
+		}
+	},
+	"postCreateCommand": "uv sync --frozen",
+	"remoteUser": "vscode"
+}

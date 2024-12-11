@@ -1,0 +1,23 @@
+[project]
+name = "aoc"
+version = "0.1.0"
+description = "Advent of Code - 2024"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.0",
+    "ipykernel>=6.29.5",
+    "ipytest>=0.14.2",
+    "ipywidgets>=8.1.5",
+    "line-profiler>=4.2.0",
+    "loguru>=0.7.2",
+    "markdownify>=0.14.1",
+    "memory-profiler>=0.61.0",
+    "notebook>=7.3.1",
+    "pydantic>=2.10.3",
+    "pydantic-settings>=2.6.1",
+    "pyinstrument>=5.0.0",
+    "pytest>=8.3.4",
+    "rust-just>=1.37.0",
+    "typer>=0.15.1",
+]
